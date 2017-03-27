@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceEmprunts" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/wcflibrary" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceEmprunts_InsertEmprunt_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertEmprunt" />
+  </wsdl:message>
+  <wsdl:message name="IServiceEmprunts_InsertEmprunt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertEmpruntResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceEmprunts_UpdateEmprunt_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmprunt" />
+  </wsdl:message>
+  <wsdl:message name="IServiceEmprunts_UpdateEmprunt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmpruntResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceEmprunts_LoadAllEmprunt_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadAllEmprunt" />
+  </wsdl:message>
+  <wsdl:message name="IServiceEmprunts_LoadAllEmprunt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadAllEmpruntResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceEmprunts_NbreEmpruntAnnexePrincipal_InputMessage">
+    <wsdl:part name="parameters" element="tns:NbreEmpruntAnnexePrincipal" />
+  </wsdl:message>
+  <wsdl:message name="IServiceEmprunts_NbreEmpruntAnnexePrincipal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NbreEmpruntAnnexePrincipalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceEmprunts_beforeEmprunter_InputMessage">
+    <wsdl:part name="parameters" element="tns:beforeEmprunter" />
+  </wsdl:message>
+  <wsdl:message name="IServiceEmprunts_beforeEmprunter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:beforeEmprunterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceEmprunts_beforeEmprunter_ExceptionContainerFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/wcflibrary" name="detail" element="q1:ExceptionContainer" />
+  </wsdl:message>
+  <wsdl:message name="IServiceEmprunts_beforeEmprunterAdo_InputMessage">
+    <wsdl:part name="parameters" element="tns:beforeEmprunterAdo" />
+  </wsdl:message>
+  <wsdl:message name="IServiceEmprunts_beforeEmprunterAdo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:beforeEmprunterAdoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceEmprunts_NbreEmpruntAnnexePrincipalAdo_InputMessage">
+    <wsdl:part name="parameters" element="tns:NbreEmpruntAnnexePrincipalAdo" />
+  </wsdl:message>
+  <wsdl:message name="IServiceEmprunts_NbreEmpruntAnnexePrincipalAdo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NbreEmpruntAnnexePrincipalAdoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceEmprunts_NbreEmpruntAnnexeAdo_InputMessage">
+    <wsdl:part name="parameters" element="tns:NbreEmpruntAnnexeAdo" />
+  </wsdl:message>
+  <wsdl:message name="IServiceEmprunts_NbreEmpruntAnnexeAdo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NbreEmpruntAnnexeAdoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceEmprunts_InsertEmpruntEF_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertEmpruntEF" />
+  </wsdl:message>
+  <wsdl:message name="IServiceEmprunts_InsertEmpruntEF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertEmpruntEFResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceEmprunts">
+    <wsdl:operation name="InsertEmprunt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceEmprunts/InsertEmprunt" message="tns:IServiceEmprunts_InsertEmprunt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceEmprunts/InsertEmpruntResponse" message="tns:IServiceEmprunts_InsertEmprunt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmprunt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceEmprunts/UpdateEmprunt" message="tns:IServiceEmprunts_UpdateEmprunt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceEmprunts/UpdateEmpruntResponse" message="tns:IServiceEmprunts_UpdateEmprunt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllEmprunt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceEmprunts/LoadAllEmprunt" message="tns:IServiceEmprunts_LoadAllEmprunt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceEmprunts/LoadAllEmpruntResponse" message="tns:IServiceEmprunts_LoadAllEmprunt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NbreEmpruntAnnexePrincipal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceEmprunts/NbreEmpruntAnnexePrincipal" message="tns:IServiceEmprunts_NbreEmpruntAnnexePrincipal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceEmprunts/NbreEmpruntAnnexePrincipalResponse" message="tns:IServiceEmprunts_NbreEmpruntAnnexePrincipal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="beforeEmprunter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceEmprunts/beforeEmprunter" message="tns:IServiceEmprunts_beforeEmprunter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceEmprunts/beforeEmprunterResponse" message="tns:IServiceEmprunts_beforeEmprunter_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IServiceEmprunts/beforeEmprunterExceptionContainerFault" name="ExceptionContainerFault" message="tns:IServiceEmprunts_beforeEmprunter_ExceptionContainerFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="beforeEmprunterAdo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceEmprunts/beforeEmprunterAdo" message="tns:IServiceEmprunts_beforeEmprunterAdo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceEmprunts/beforeEmprunterAdoResponse" message="tns:IServiceEmprunts_beforeEmprunterAdo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NbreEmpruntAnnexePrincipalAdo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceEmprunts/NbreEmpruntAnnexePrincipalAdo" message="tns:IServiceEmprunts_NbreEmpruntAnnexePrincipalAdo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceEmprunts/NbreEmpruntAnnexePrincipalAdoResponse" message="tns:IServiceEmprunts_NbreEmpruntAnnexePrincipalAdo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NbreEmpruntAnnexeAdo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceEmprunts/NbreEmpruntAnnexeAdo" message="tns:IServiceEmprunts_NbreEmpruntAnnexeAdo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceEmprunts/NbreEmpruntAnnexeAdoResponse" message="tns:IServiceEmprunts_NbreEmpruntAnnexeAdo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmpruntEF">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceEmprunts/InsertEmpruntEF" message="tns:IServiceEmprunts_InsertEmpruntEF_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceEmprunts/InsertEmpruntEFResponse" message="tns:IServiceEmprunts_InsertEmpruntEF_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceEmprunts" type="tns:IServiceEmprunts">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertEmprunt">
+      <soap:operation soapAction="http://tempuri.org/IServiceEmprunts/InsertEmprunt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmprunt">
+      <soap:operation soapAction="http://tempuri.org/IServiceEmprunts/UpdateEmprunt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllEmprunt">
+      <soap:operation soapAction="http://tempuri.org/IServiceEmprunts/LoadAllEmprunt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NbreEmpruntAnnexePrincipal">
+      <soap:operation soapAction="http://tempuri.org/IServiceEmprunts/NbreEmpruntAnnexePrincipal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="beforeEmprunter">
+      <soap:operation soapAction="http://tempuri.org/IServiceEmprunts/beforeEmprunter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionContainerFault">
+        <soap:fault use="literal" name="ExceptionContainerFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="beforeEmprunterAdo">
+      <soap:operation soapAction="http://tempuri.org/IServiceEmprunts/beforeEmprunterAdo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NbreEmpruntAnnexePrincipalAdo">
+      <soap:operation soapAction="http://tempuri.org/IServiceEmprunts/NbreEmpruntAnnexePrincipalAdo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NbreEmpruntAnnexeAdo">
+      <soap:operation soapAction="http://tempuri.org/IServiceEmprunts/NbreEmpruntAnnexeAdo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmpruntEF">
+      <soap:operation soapAction="http://tempuri.org/IServiceEmprunts/InsertEmpruntEF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceEmprunts">
+    <wsdl:port name="BasicHttpBinding_IServiceEmprunts" binding="tns:BasicHttpBinding_IServiceEmprunts">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/wcflibrary/ServiceEmprunts/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceExemplaires" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/wcflibrary" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceExemplaires_VerifiNbreExemDispo_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifiNbreExemDispo" />
+  </wsdl:message>
+  <wsdl:message name="IServiceExemplaires_VerifiNbreExemDispo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifiNbreExemDispoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceExemplaires_VerifiNbreExemDispoAdo_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifiNbreExemDispoAdo" />
+  </wsdl:message>
+  <wsdl:message name="IServiceExemplaires_VerifiNbreExemDispoAdo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifiNbreExemDispoAdoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceExemplaires_GetCountAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountAll" />
+  </wsdl:message>
+  <wsdl:message name="IServiceExemplaires_GetCountAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceExemplaires_GetAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAll" />
+  </wsdl:message>
+  <wsdl:message name="IServiceExemplaires_GetAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceExemplaires_Exemplaire_SoldeRetard_InputMessage">
+    <wsdl:part name="parameters" element="tns:Exemplaire_SoldeRetard" />
+  </wsdl:message>
+  <wsdl:message name="IServiceExemplaires_Exemplaire_SoldeRetard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Exemplaire_SoldeRetardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceExemplaires_Exemplaire_Solde_InputMessage">
+    <wsdl:part name="parameters" element="tns:Exemplaire_Solde" />
+  </wsdl:message>
+  <wsdl:message name="IServiceExemplaires_Exemplaire_Solde_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Exemplaire_SoldeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceExemplaires_CreateExemplaire_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateExemplaire" />
+  </wsdl:message>
+  <wsdl:message name="IServiceExemplaires_CreateExemplaire_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateExemplaireResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceExemplaires_LoadAllCopyCA_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadAllCopyCA" />
+  </wsdl:message>
+  <wsdl:message name="IServiceExemplaires_LoadAllCopyCA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadAllCopyCAResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceExemplaires_GetAllExemBiblio_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllExemBiblio" />
+  </wsdl:message>
+  <wsdl:message name="IServiceExemplaires_GetAllExemBiblio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllExemBiblioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceExemplaires_SearchExemBiblio_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchExemBiblio" />
+  </wsdl:message>
+  <wsdl:message name="IServiceExemplaires_SearchExemBiblio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchExemBiblioResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceExemplaires">
+    <wsdl:operation name="VerifiNbreExemDispo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceExemplaires/VerifiNbreExemDispo" message="tns:IServiceExemplaires_VerifiNbreExemDispo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceExemplaires/VerifiNbreExemDispoResponse" message="tns:IServiceExemplaires_VerifiNbreExemDispo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifiNbreExemDispoAdo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceExemplaires/VerifiNbreExemDispoAdo" message="tns:IServiceExemplaires_VerifiNbreExemDispoAdo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceExemplaires/VerifiNbreExemDispoAdoResponse" message="tns:IServiceExemplaires_VerifiNbreExemDispoAdo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceExemplaires/GetCountAll" message="tns:IServiceExemplaires_GetCountAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceExemplaires/GetCountAllResponse" message="tns:IServiceExemplaires_GetCountAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceExemplaires/GetAll" message="tns:IServiceExemplaires_GetAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceExemplaires/GetAllResponse" message="tns:IServiceExemplaires_GetAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Exemplaire_SoldeRetard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceExemplaires/Exemplaire_SoldeRetard" message="tns:IServiceExemplaires_Exemplaire_SoldeRetard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceExemplaires/Exemplaire_SoldeRetardResponse" message="tns:IServiceExemplaires_Exemplaire_SoldeRetard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Exemplaire_Solde">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceExemplaires/Exemplaire_Solde" message="tns:IServiceExemplaires_Exemplaire_Solde_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceExemplaires/Exemplaire_SoldeResponse" message="tns:IServiceExemplaires_Exemplaire_Solde_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateExemplaire">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceExemplaires/CreateExemplaire" message="tns:IServiceExemplaires_CreateExemplaire_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceExemplaires/CreateExemplaireResponse" message="tns:IServiceExemplaires_CreateExemplaire_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllCopyCA">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceExemplaires/LoadAllCopyCA" message="tns:IServiceExemplaires_LoadAllCopyCA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceExemplaires/LoadAllCopyCAResponse" message="tns:IServiceExemplaires_LoadAllCopyCA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllExemBiblio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceExemplaires/GetAllExemBiblio" message="tns:IServiceExemplaires_GetAllExemBiblio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceExemplaires/GetAllExemBiblioResponse" message="tns:IServiceExemplaires_GetAllExemBiblio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchExemBiblio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceExemplaires/SearchExemBiblio" message="tns:IServiceExemplaires_SearchExemBiblio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceExemplaires/SearchExemBiblioResponse" message="tns:IServiceExemplaires_SearchExemBiblio_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceExemplaires" type="tns:IServiceExemplaires">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VerifiNbreExemDispo">
+      <soap:operation soapAction="http://tempuri.org/IServiceExemplaires/VerifiNbreExemDispo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifiNbreExemDispoAdo">
+      <soap:operation soapAction="http://tempuri.org/IServiceExemplaires/VerifiNbreExemDispoAdo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountAll">
+      <soap:operation soapAction="http://tempuri.org/IServiceExemplaires/GetCountAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAll">
+      <soap:operation soapAction="http://tempuri.org/IServiceExemplaires/GetAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Exemplaire_SoldeRetard">
+      <soap:operation soapAction="http://tempuri.org/IServiceExemplaires/Exemplaire_SoldeRetard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Exemplaire_Solde">
+      <soap:operation soapAction="http://tempuri.org/IServiceExemplaires/Exemplaire_Solde" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateExemplaire">
+      <soap:operation soapAction="http://tempuri.org/IServiceExemplaires/CreateExemplaire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllCopyCA">
+      <soap:operation soapAction="http://tempuri.org/IServiceExemplaires/LoadAllCopyCA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllExemBiblio">
+      <soap:operation soapAction="http://tempuri.org/IServiceExemplaires/GetAllExemBiblio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchExemBiblio">
+      <soap:operation soapAction="http://tempuri.org/IServiceExemplaires/SearchExemBiblio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceExemplaires">
+    <wsdl:port name="BasicHttpBinding_IServiceExemplaires" binding="tns:BasicHttpBinding_IServiceExemplaires">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/wcflibrary/ServiceExemplaires/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

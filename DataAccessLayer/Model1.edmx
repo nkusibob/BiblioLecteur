@@ -1,0 +1,766 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="bibliothequeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="AddLecteur" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userName" Type="nvarchar" Mode="In" />
+          <Parameter Name="PasswordHash" Type="nvarchar" Mode="In" />
+          <Parameter Name="biblioPrincip" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CA_Livre" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="CheckingUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userName" Type="varchar" Mode="In" />
+          <Parameter Name="password" Type="nvarchar" Mode="In" />
+          <Parameter Name="libelle" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="CheckngUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userName" Type="varchar" Mode="In" />
+          <Parameter Name="password" Type="nvarchar" Mode="In" />
+          <Parameter Name="libelle" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="CountExemplaire_SelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="CustomEmprunt_Create" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="prixEmprunt" Type="money" Mode="In" />
+          <Parameter Name="exemplaireName" Type="nvarchar" Mode="In" />
+          <Parameter Name="userName" Type="nvarchar" Mode="In" />
+          <Parameter Name="biblio" Type="nvarchar" Mode="In" />
+          <Parameter Name="date_de_retour" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="EmpDeleteById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Emprunt_Create" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="lecteurID" Type="int" Mode="In" />
+          <Parameter Name="prixEmprunt" Type="money" Mode="In" />
+          <Parameter Name="exemplaireID" Type="int" Mode="In" />
+          <Parameter Name="date_de_retour" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="Emprunt_Reload" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Emprunt_SelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="examplaire_Create" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="code" Type="varchar" Mode="In" />
+          <Parameter Name="date_achat" Type="datetime" Mode="In" />
+          <Parameter Name="date_emprunt" Type="datetime" Mode="In" />
+          <Parameter Name="id_biblio" Type="int" Mode="In" />
+          <Parameter Name="id_livre" Type="int" Mode="In" />
+        </Function>
+        <Function Name="examplaire_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="code" Type="varchar" Mode="In" />
+          <Parameter Name="date_achat" Type="datetime" Mode="In" />
+          <Parameter Name="date_emprunt" Type="datetime" Mode="In" />
+          <Parameter Name="id_biblio" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Exemplaire_AllRetardsUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="lecteurNom" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Exemplaire_Biblio_SelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nomBiblio" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Exemplaire_SelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Exemplaire_SelectAllRetards" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Exemplaire_SelectAllRetardsUserCalledTrigger" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="lecteurNom" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Exemplaire_SelectAllRetardsUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="lecteurNom" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Exemplaire_SoldeRetardToday" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="ExemplaireDeleteById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ExemplaireParBiblio_SelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nomBiblio" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="gestionRetour" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="myid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetImage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="titre" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="InsertReservations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="LivrTitle" Type="nvarchar" Mode="In" />
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="livre_Create" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="isbn" Type="nvarchar" Mode="In" />
+          <Parameter Name="titre" Type="nvarchar" Mode="In" />
+          <Parameter Name="auteur" Type="nvarchar" Mode="In" />
+          <Parameter Name="image" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="NbreEmpruntAnnexe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="NbreExemplaire_SelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="NbreExemplaireParBiblio_SelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Principal_Annexe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Reservation_SelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Search_Exemplaire_Biblio_SelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nomBiblio" Type="nvarchar" Mode="In" />
+          <Parameter Name="codeexemplaire" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Select_BiblioPrincipale" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SelectAll_Biblio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="soldeRetour" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="UpdateEmpruntByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="date_de_retour" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="User_Reservation_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userName" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="User_ReservationParBiblio_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nomBiblio" Type="varchar" Mode="In" />
+          <Parameter Name="userName" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="VerifieSiDispo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="biblio" Type="nvarchar" Mode="In" />
+          <Parameter Name="livre" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="VerifieSiDispoAllLibrary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="biblio" Type="nvarchar" Mode="In" />
+          <Parameter Name="livre" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="bibliothequeModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="bibliothequeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="bibliothequeEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="AddLecteur">
+            <Parameter Name="userName" Mode="In" Type="String" />
+            <Parameter Name="PasswordHash" Mode="In" Type="String" />
+            <Parameter Name="biblioPrincip" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CA_Livre" ReturnType="Collection(bibliothequeModel.CA_Livre_Result)" />
+          <FunctionImport Name="CheckingUser" ReturnType="Collection(bibliothequeModel.CheckingUser_Result)">
+            <Parameter Name="userName" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+            <Parameter Name="libelle" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CheckngUser" ReturnType="Collection(bibliothequeModel.CheckngUser_Result)">
+            <Parameter Name="userName" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+            <Parameter Name="libelle" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CountExemplaire_SelectAll" ReturnType="Collection(bibliothequeModel.CountExemplaire_SelectAll_Result)" />
+          <FunctionImport Name="CustomEmprunt_Create">
+            <Parameter Name="prixEmprunt" Mode="In" Type="Decimal" />
+            <Parameter Name="exemplaireName" Mode="In" Type="String" />
+            <Parameter Name="userName" Mode="In" Type="String" />
+            <Parameter Name="biblio" Mode="In" Type="String" />
+            <Parameter Name="date_de_retour" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="EmpDeleteById">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Emprunt_Create">
+            <Parameter Name="lecteurID" Mode="In" Type="Int32" />
+            <Parameter Name="prixEmprunt" Mode="In" Type="Decimal" />
+            <Parameter Name="exemplaireID" Mode="In" Type="Int32" />
+            <Parameter Name="date_de_retour" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="Emprunt_Reload" ReturnType="Collection(bibliothequeModel.Emprunt_Reload_Result)" />
+          <FunctionImport Name="Emprunt_SelectAll" ReturnType="Collection(bibliothequeModel.Emprunt_SelectAll_Result)" />
+          <FunctionImport Name="examplaire_Create">
+            <Parameter Name="code" Mode="In" Type="String" />
+            <Parameter Name="date_achat" Mode="In" Type="DateTime" />
+            <Parameter Name="date_emprunt" Mode="In" Type="DateTime" />
+            <Parameter Name="id_biblio" Mode="In" Type="Int32" />
+            <Parameter Name="id_livre" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="examplaire_Update">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="code" Mode="In" Type="String" />
+            <Parameter Name="date_achat" Mode="In" Type="DateTime" />
+            <Parameter Name="date_emprunt" Mode="In" Type="DateTime" />
+            <Parameter Name="id_biblio" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Exemplaire_AllRetardsUser" ReturnType="Collection(Int32)">
+          <Parameter Name="lecteurNom" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Exemplaire_Biblio_SelectAll" ReturnType="Collection(bibliothequeModel.Exemplaire_Biblio_SelectAll_Result)">
+          <Parameter Name="nomBiblio" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Exemplaire_SelectAll" ReturnType="Collection(bibliothequeModel.Exemplaire_SelectAll_Result)" />
+          <FunctionImport Name="Exemplaire_SelectAllRetards" ReturnType="Collection(bibliothequeModel.Exemplaire_SelectAllRetards_Result)" />
+          <FunctionImport Name="Exemplaire_SelectAllRetardsUserCalledTrigger" ReturnType="Collection(Int32)">
+          <Parameter Name="lecteurNom" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Exemplaire_SelectAllRetardsUsers" ReturnType="Collection(bibliothequeModel.Exemplaire_SelectAllRetardsUsers_Result)">
+          <Parameter Name="lecteurNom" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Exemplaire_SoldeRetardToday" ReturnType="Collection(bibliothequeModel.Exemplaire_SoldeRetardToday_Result)" />
+          <FunctionImport Name="ExemplaireDeleteById">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ExemplaireParBiblio_SelectAll" ReturnType="Collection(bibliothequeModel.ExemplaireParBiblio_SelectAll_Result)">
+          <Parameter Name="nomBiblio" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="gestionRetour" ReturnType="Collection(Decimal)">
+          <Parameter Name="myid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetImage" ReturnType="Collection(String)">
+          <Parameter Name="titre" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="InsertReservations">
+            <Parameter Name="LivrTitle" Mode="In" Type="String" />
+            <Parameter Name="UserName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="livre_Create">
+            <Parameter Name="isbn" Mode="In" Type="String" />
+            <Parameter Name="titre" Mode="In" Type="String" />
+            <Parameter Name="auteur" Mode="In" Type="String" />
+            <Parameter Name="image" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="NbreExemplaire_SelectAll" ReturnType="Collection(bibliothequeModel.NbreExemplaire_SelectAll_Result)" />
+          <FunctionImport Name="NbreExemplaireParBiblio_SelectAll" ReturnType="Collection(bibliothequeModel.NbreExemplaireParBiblio_SelectAll_Result)">
+          <Parameter Name="userName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Principal_Annexe" ReturnType="Collection(Int32)">
+          <Parameter Name="user" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Reservation_SelectAll" ReturnType="Collection(bibliothequeModel.Reservation_SelectAll_Result)" />
+          <FunctionImport Name="Search_Exemplaire_Biblio_SelectAll" ReturnType="Collection(bibliothequeModel.Search_Exemplaire_Biblio_SelectAll_Result)">
+            <Parameter Name="nomBiblio" Mode="In" Type="String" />
+            <Parameter Name="codeexemplaire" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAll_Biblio" ReturnType="Collection(bibliothequeModel.SelectAll_Biblio_Result)" />
+          <FunctionImport Name="soldeRetour" ReturnType="Collection(bibliothequeModel.soldeRetour_Result)" />
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(bibliothequeModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(bibliothequeModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="UpdateEmpruntByID">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="date_de_retour" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="User_Reservation_Select" ReturnType="Collection(bibliothequeModel.User_Reservation_Select_Result)">
+          <Parameter Name="userName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="User_ReservationParBiblio_Select" ReturnType="Collection(bibliothequeModel.User_ReservationParBiblio_Select_Result)">
+            <Parameter Name="nomBiblio" Mode="In" Type="String" />
+            <Parameter Name="userName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="VerifieSiDispo" ReturnType="Collection(bibliothequeModel.VerifieSiDispo_Result)">
+            <Parameter Name="biblio" Mode="In" Type="String" />
+            <Parameter Name="livre" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="VerifieSiDispoAllLibrary">
+            <Parameter Name="biblio" Mode="In" Type="String" />
+            <Parameter Name="livre" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="NbreEmpruntAnnexe" ReturnType="Collection(Int32)">
+          <Parameter Name="user" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Select_BiblioPrincipale" ReturnType="Collection(String)">
+          <Parameter Name="user" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="CA_Livre_Result">
+          <Property Type="Decimal" Name="Total" Nullable="true" Precision="19" />
+          <Property Type="String" Name="titre" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="CheckingUser_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="nom" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="motPassword" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="libellé" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="CheckngUser_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="nom" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="motPassword" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="libellé" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="CountExemplaire_SelectAll_Result">
+          <Property Type="Int32" Name="NbreDispoNow" Nullable="true" />
+          <Property Type="String" Name="titre" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="biblio" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="Emprunt_Reload_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="lecteurID" Nullable="false" />
+          <Property Type="Decimal" Name="prixEmprunt" Nullable="false" Precision="19" />
+          <Property Type="Int32" Name="exemplaireID" Nullable="false" />
+          <Property Type="DateTime" Name="date_de_retour" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="Emprunt_SelectAll_Result">
+          <Property Type="String" Name="titre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="nom" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="libellé" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="DateTime" Name="date_de_retour" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="prixEmprunt" Nullable="false" Precision="19" />
+        </ComplexType>
+        <ComplexType Name="Exemplaire_Biblio_SelectAll_Result">
+          <Property Type="String" Name="code" Nullable="false" MaxLength="20" />
+          <Property Type="Int32" Name="idExemplaire" Nullable="false" />
+          <Property Type="String" Name="auteur" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="Exemplaire_SelectAll_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="code" Nullable="false" MaxLength="20" />
+          <Property Type="DateTime" Name="achat" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="date_emprunt" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="id_biblio" Nullable="false" />
+          <Property Type="Int32" Name="idLivre" Nullable="false" />
+          <Property Type="Int32" Name="id1" Nullable="false" />
+          <Property Type="String" Name="libellé" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Code1" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="Exemplaire_SelectAllRetards_Result">
+          <Property Type="String" Name="nom" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="prixEmprunt" Nullable="false" Precision="19" />
+          <Property Type="String" Name="titre" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="exemplaireID" Nullable="false" />
+          <Property Type="DateTime" Name="date_emprunt" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="date_de_retour" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="Exemplaire_SelectAllRetardsUsers_Result">
+          <Property Type="String" Name="nom" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="prixEmprunt" Nullable="false" Precision="19" />
+          <Property Type="String" Name="code" Nullable="false" MaxLength="20" />
+          <Property Type="Int32" Name="NbrMoisAutorisé" Nullable="false" />
+          <Property Type="Int32" Name="exemplaireID" Nullable="false" />
+          <Property Type="Decimal" Name="tarifParJours" Nullable="false" Precision="19" />
+          <Property Type="DateTime" Name="date_emprunt" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="solde" Nullable="true" />
+          <Property Type="DateTime" Name="dateRetour" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="Exemplaire_SoldeRetardToday_Result">
+          <Property Type="String" Name="nom" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="prixEmprunt" Nullable="false" Precision="19" />
+          <Property Type="String" Name="titre" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="exemplaireID" Nullable="false" />
+          <Property Type="DateTime" Name="date_emprunt" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="solde" Nullable="true" Precision="19" />
+          <Property Type="DateTime" Name="date_de_retour" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="ExemplaireParBiblio_SelectAll_Result">
+          <Property Type="String" Name="code" Nullable="false" MaxLength="20" />
+          <Property Type="Int32" Name="idExemplaire" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="NbreExemplaire_SelectAll_Result">
+          <Property Type="Int32" Name="NbreDispoNow" Nullable="true" />
+          <Property Type="String" Name="titre" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="biblio" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="total" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="NbreExemplaireParBiblio_SelectAll_Result">
+          <Property Type="Int32" Name="NbreDispoNow" Nullable="true" />
+          <Property Type="String" Name="titre" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="biblio" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="Reservation_SelectAll_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="livreID" Nullable="false" />
+          <Property Type="Int32" Name="lecteurID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="Search_Exemplaire_Biblio_SelectAll_Result">
+          <Property Type="String" Name="code" Nullable="false" MaxLength="20" />
+          <Property Type="Int32" Name="idExemplaire" Nullable="false" />
+          <Property Type="String" Name="auteur" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SelectAll_Biblio_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="libellé" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Code" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="soldeRetour_Result">
+          <Property Type="String" Name="nom" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="tarif_emprunt" Nullable="false" Precision="19" />
+          <Property Type="String" Name="titre" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="exemplaireID" Nullable="false" />
+          <Property Type="DateTime" Name="date_emprunt" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="prixEmprunt" Nullable="false" Precision="19" />
+          <Property Type="Decimal" Name="solde" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="tarif_retard" Nullable="false" Precision="19" />
+          <Property Type="DateTime" Name="date_de_retour" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="User_Reservation_Select_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="titre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="nom" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="libellé" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="User_ReservationParBiblio_Select_Result">
+          <Property Type="String" Name="code" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="nom" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="libellé" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="VerifieSiDispo_Result">
+          <Property Type="Int32" Name="NbreDispoNow" Nullable="true" />
+          <Property Type="String" Name="titre" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="biblio" Nullable="false" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="bibliothequeModelStoreContainer" CdmEntityContainer="bibliothequeEntities" >
+          <FunctionImportMapping FunctionImportName="AddLecteur" FunctionName="bibliothequeModel.Store.AddLecteur" />
+          <FunctionImportMapping FunctionImportName="CA_Livre" FunctionName="bibliothequeModel.Store.CA_Livre">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="bibliothequeModel.CA_Livre_Result">
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="titre" ColumnName="titre" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CheckingUser" FunctionName="bibliothequeModel.Store.CheckingUser">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="bibliothequeModel.CheckingUser_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="motPassword" ColumnName="motPassword" />
+                <ScalarProperty Name="libellé" ColumnName="libellé" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CheckngUser" FunctionName="bibliothequeModel.Store.CheckngUser">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="bibliothequeModel.CheckngUser_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="motPassword" ColumnName="motPassword" />
+                <ScalarProperty Name="libellé" ColumnName="libellé" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CountExemplaire_SelectAll" FunctionName="bibliothequeModel.Store.CountExemplaire_SelectAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="bibliothequeModel.CountExemplaire_SelectAll_Result">
+                <ScalarProperty Name="NbreDispoNow" ColumnName="NbreDispoNow" />
+                <ScalarProperty Name="titre" ColumnName="titre" />
+                <ScalarProperty Name="biblio" ColumnName="biblio" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CustomEmprunt_Create" FunctionName="bibliothequeModel.Store.CustomEmprunt_Create" />
+          <FunctionImportMapping FunctionImportName="EmpDeleteById" FunctionName="bibliothequeModel.Store.EmpDeleteById" />
+          <FunctionImportMapping FunctionImportName="Emprunt_Create" FunctionName="bibliothequeModel.Store.Emprunt_Create" />
+          <FunctionImportMapping FunctionImportName="Emprunt_Reload" FunctionName="bibliothequeModel.Store.Emprunt_Reload">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="bibliothequeModel.Emprunt_Reload_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="lecteurID" ColumnName="lecteurID" />
+                <ScalarProperty Name="prixEmprunt" ColumnName="prixEmprunt" />
+                <ScalarProperty Name="exemplaireID" ColumnName="exemplaireID" />
+                <ScalarProperty Name="date_de_retour" ColumnName="date_de retour" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Emprunt_SelectAll" FunctionName="bibliothequeModel.Store.Emprunt_SelectAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="bibliothequeModel.Emprunt_SelectAll_Result">
+                <ScalarProperty Name="titre" ColumnName="titre" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="libellé" ColumnName="libellé" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="date_de_retour" ColumnName="date_de retour" />
+                <ScalarProperty Name="prixEmprunt" ColumnName="prixEmprunt" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="examplaire_Create" FunctionName="bibliothequeModel.Store.examplaire_Create" />
+          <FunctionImportMapping FunctionImportName="examplaire_Update" FunctionName="bibliothequeModel.Store.examplaire_Update" />
+          <FunctionImportMapping FunctionImportName="Exemplaire_AllRetardsUser" FunctionName="bibliothequeModel.Store.Exemplaire_AllRetardsUser" />
+          <FunctionImportMapping FunctionImportName="Exemplaire_Biblio_SelectAll" FunctionName="bibliothequeModel.Store.Exemplaire_Biblio_SelectAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="bibliothequeModel.Exemplaire_Biblio_SelectAll_Result">
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="idExemplaire" ColumnName="idExemplaire" />
+                <ScalarProperty Name="auteur" ColumnName="auteur" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Exemplaire_SelectAll" FunctionName="bibliothequeModel.Store.Exemplaire_SelectAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="bibliothequeModel.Exemplaire_SelectAll_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="achat" ColumnName="achat" />
+                <ScalarProperty Name="date_emprunt" ColumnName="date_emprunt" />
+                <ScalarProperty Name="id_biblio" ColumnName="id_biblio" />
+                <ScalarProperty Name="idLivre" ColumnName="idLivre" />
+                <ScalarProperty Name="id1" ColumnName="id1" />
+                <ScalarProperty Name="libellé" ColumnName="libellé" />
+                <ScalarProperty Name="Code1" ColumnName="Code1" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Exemplaire_SelectAllRetards" FunctionName="bibliothequeModel.Store.Exemplaire_SelectAllRetards">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="bibliothequeModel.Exemplaire_SelectAllRetards_Result">
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="prixEmprunt" ColumnName="prixEmprunt" />
+                <ScalarProperty Name="titre" ColumnName="titre" />
+                <ScalarProperty Name="exemplaireID" ColumnName="exemplaireID" />
+                <ScalarProperty Name="date_emprunt" ColumnName="date_emprunt" />
+                <ScalarProperty Name="date_de_retour" ColumnName="date_de retour" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Exemplaire_SelectAllRetardsUserCalledTrigger" FunctionName="bibliothequeModel.Store.Exemplaire_SelectAllRetardsUserCalledTrigger" />
+          <FunctionImportMapping FunctionImportName="Exemplaire_SelectAllRetardsUsers" FunctionName="bibliothequeModel.Store.Exemplaire_SelectAllRetardsUsers">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="bibliothequeModel.Exemplaire_SelectAllRetardsUsers_Result">
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="prixEmprunt" ColumnName="prixEmprunt" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="NbrMoisAutorisé" ColumnName="NbrMoisAutorisé" />
+                <ScalarProperty Name="exemplaireID" ColumnName="exemplaireID" />
+                <ScalarProperty Name="tarifParJours" ColumnName="tarifParJours" />
+                <ScalarProperty Name="date_emprunt" ColumnName="date_emprunt" />
+                <ScalarProperty Name="solde" ColumnName="solde" />
+                <ScalarProperty Name="dateRetour" ColumnName="dateRetour" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Exemplaire_SoldeRetardToday" FunctionName="bibliothequeModel.Store.Exemplaire_SoldeRetardToday">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="bibliothequeModel.Exemplaire_SoldeRetardToday_Result">
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="prixEmprunt" ColumnName="prixEmprunt" />
+                <ScalarProperty Name="titre" ColumnName="titre" />
+                <ScalarProperty Name="exemplaireID" ColumnName="exemplaireID" />
+                <ScalarProperty Name="date_emprunt" ColumnName="date_emprunt" />
+                <ScalarProperty Name="solde" ColumnName="solde" />
+                <ScalarProperty Name="date_de_retour" ColumnName="date_de retour" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ExemplaireDeleteById" FunctionName="bibliothequeModel.Store.ExemplaireDeleteById" />
+          <FunctionImportMapping FunctionImportName="ExemplaireParBiblio_SelectAll" FunctionName="bibliothequeModel.Store.ExemplaireParBiblio_SelectAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="bibliothequeModel.ExemplaireParBiblio_SelectAll_Result">
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="idExemplaire" ColumnName="idExemplaire" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="gestionRetour" FunctionName="bibliothequeModel.Store.gestionRetour" />
+          <FunctionImportMapping FunctionImportName="GetImage" FunctionName="bibliothequeModel.Store.GetImage" />
+          <FunctionImportMapping FunctionImportName="InsertReservations" FunctionName="bibliothequeModel.Store.InsertReservations" />
+          <FunctionImportMapping FunctionImportName="livre_Create" FunctionName="bibliothequeModel.Store.livre_Create" />
+          <FunctionImportMapping FunctionImportName="NbreExemplaire_SelectAll" FunctionName="bibliothequeModel.Store.NbreExemplaire_SelectAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="bibliothequeModel.NbreExemplaire_SelectAll_Result">
+                <ScalarProperty Name="NbreDispoNow" ColumnName="NbreDispoNow" />
+                <ScalarProperty Name="titre" ColumnName="titre" />
+                <ScalarProperty Name="biblio" ColumnName="biblio" />
+                <ScalarProperty Name="total" ColumnName="total" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="NbreExemplaireParBiblio_SelectAll" FunctionName="bibliothequeModel.Store.NbreExemplaireParBiblio_SelectAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="bibliothequeModel.NbreExemplaireParBiblio_SelectAll_Result">
+                <ScalarProperty Name="NbreDispoNow" ColumnName="NbreDispoNow" />
+                <ScalarProperty Name="titre" ColumnName="titre" />
+                <ScalarProperty Name="biblio" ColumnName="biblio" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Principal_Annexe" FunctionName="bibliothequeModel.Store.Principal_Annexe" />
+          <FunctionImportMapping FunctionImportName="Reservation_SelectAll" FunctionName="bibliothequeModel.Store.Reservation_SelectAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="bibliothequeModel.Reservation_SelectAll_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="livreID" ColumnName="livreID" />
+                <ScalarProperty Name="lecteurID" ColumnName="lecteurID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Search_Exemplaire_Biblio_SelectAll" FunctionName="bibliothequeModel.Store.Search_Exemplaire_Biblio_SelectAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="bibliothequeModel.Search_Exemplaire_Biblio_SelectAll_Result">
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="idExemplaire" ColumnName="idExemplaire" />
+                <ScalarProperty Name="auteur" ColumnName="auteur" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectAll_Biblio" FunctionName="bibliothequeModel.Store.SelectAll_Biblio">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="bibliothequeModel.SelectAll_Biblio_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="libellé" ColumnName="libellé" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="soldeRetour" FunctionName="bibliothequeModel.Store.soldeRetour">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="bibliothequeModel.soldeRetour_Result">
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="tarif_emprunt" ColumnName="tarif_emprunt" />
+                <ScalarProperty Name="titre" ColumnName="titre" />
+                <ScalarProperty Name="exemplaireID" ColumnName="exemplaireID" />
+                <ScalarProperty Name="date_emprunt" ColumnName="date_emprunt" />
+                <ScalarProperty Name="prixEmprunt" ColumnName="prixEmprunt" />
+                <ScalarProperty Name="solde" ColumnName="solde" />
+                <ScalarProperty Name="tarif_retard" ColumnName="tarif_retard" />
+                <ScalarProperty Name="date_de_retour" ColumnName="date_de retour" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="bibliothequeModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="bibliothequeModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="bibliothequeModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="bibliothequeModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="bibliothequeModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="bibliothequeModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="bibliothequeModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="bibliothequeModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="bibliothequeModel.Store.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="UpdateEmpruntByID" FunctionName="bibliothequeModel.Store.UpdateEmpruntByID" />
+          <FunctionImportMapping FunctionImportName="User_Reservation_Select" FunctionName="bibliothequeModel.Store.User_Reservation_Select">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="bibliothequeModel.User_Reservation_Select_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="titre" ColumnName="titre" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="libellé" ColumnName="libellé" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="User_ReservationParBiblio_Select" FunctionName="bibliothequeModel.Store.User_ReservationParBiblio_Select">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="bibliothequeModel.User_ReservationParBiblio_Select_Result">
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="libellé" ColumnName="libellé" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="VerifieSiDispo" FunctionName="bibliothequeModel.Store.VerifieSiDispo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="bibliothequeModel.VerifieSiDispo_Result">
+                <ScalarProperty Name="NbreDispoNow" ColumnName="NbreDispoNow" />
+                <ScalarProperty Name="titre" ColumnName="titre" />
+                <ScalarProperty Name="biblio" ColumnName="biblio" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="VerifieSiDispoAllLibrary" FunctionName="bibliothequeModel.Store.VerifieSiDispoAllLibrary" />
+          <FunctionImportMapping FunctionImportName="NbreEmpruntAnnexe" FunctionName="bibliothequeModel.Store.NbreEmpruntAnnexe" />
+          <FunctionImportMapping FunctionImportName="Select_BiblioPrincipale" FunctionName="bibliothequeModel.Store.Select_BiblioPrincipale" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

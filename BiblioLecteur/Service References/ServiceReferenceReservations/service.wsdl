@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ReservationsService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/wcflibrary" />
+      <xsd:import />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IReservationsService_getAllUserReservations_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllUserReservations" />
+  </wsdl:message>
+  <wsdl:message name="IReservationsService_getAllUserReservations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllUserReservationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationsService_getAllReservations_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllReservations" />
+  </wsdl:message>
+  <wsdl:message name="IReservationsService_getAllReservations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllReservationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationsService_getReservations_InputMessage">
+    <wsdl:part name="parameters" element="tns:getReservations" />
+  </wsdl:message>
+  <wsdl:message name="IReservationsService_getReservations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getReservationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationsService_insertReservation_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertReservation" />
+  </wsdl:message>
+  <wsdl:message name="IReservationsService_insertReservation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertReservationResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IReservationsService">
+    <wsdl:operation name="getAllUserReservations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationsService/getAllUserReservations" message="tns:IReservationsService_getAllUserReservations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationsService/getAllUserReservationsResponse" message="tns:IReservationsService_getAllUserReservations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllReservations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationsService/getAllReservations" message="tns:IReservationsService_getAllReservations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationsService/getAllReservationsResponse" message="tns:IReservationsService_getAllReservations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getReservations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationsService/getReservations" message="tns:IReservationsService_getReservations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationsService/getReservationsResponse" message="tns:IReservationsService_getReservations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertReservation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationsService/insertReservation" message="tns:IReservationsService_insertReservation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationsService/insertReservationResponse" message="tns:IReservationsService_insertReservation_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IReservationsService" type="tns:IReservationsService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getAllUserReservations">
+      <soap:operation soapAction="http://tempuri.org/IReservationsService/getAllUserReservations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllReservations">
+      <soap:operation soapAction="http://tempuri.org/IReservationsService/getAllReservations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReservations">
+      <soap:operation soapAction="http://tempuri.org/IReservationsService/getReservations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertReservation">
+      <soap:operation soapAction="http://tempuri.org/IReservationsService/insertReservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ReservationsService">
+    <wsdl:port name="BasicHttpBinding_IReservationsService" binding="tns:BasicHttpBinding_IReservationsService">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/wcflibrary/ReservationsService/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/wcflibrary" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/wcflibrary" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfclsexemplaires">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsexemplaires" nillable="true" type="tns:clsexemplaires" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsexemplaires" nillable="true" type="tns:ArrayOfclsexemplaires" />
+  <xs:complexType name="clsexemplaires">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdExem" type="xs:int" />
+      <xs:element minOccurs="0" name="achat" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="auteur" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="date_emprunt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="idLivre" type="xs:int" />
+      <xs:element minOccurs="0" name="id_biblio" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsexemplaires" nillable="true" type="tns:clsexemplaires" />
+</xs:schema>
